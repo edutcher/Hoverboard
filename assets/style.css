@@ -3,7 +3,7 @@
 }
 
 
-/* creates styling for the body of our page, mostly move everything to
+/* Creates styling for the body of our page, mostly move everything to
 the center both vertically and horizontally*/
 
 body {
@@ -17,7 +17,7 @@ body {
 }
 
 
-/* creates a container for our sqaures, sets it to be a flex container
+/* Creates a container for our sqaures, sets it to be a flex container
 which adds content horizontally instead of vertically, aligns things to
 the center, wraps content, and set a width so we know our sqaures fit right*/
 
@@ -30,7 +30,7 @@ the center, wraps content, and set a width so we know our sqaures fit right*/
 }
 
 
-/* creates our square class, this defines the default look of our squares*/
+/* Creates our square class, this defines the default look of our squares*/
 
 .square {
     background-color: #1d1d1d;
@@ -42,7 +42,9 @@ the center, wraps content, and set a width so we know our sqaures fit right*/
 }
 
 
-/* makes our transition happen instantly*/
+/* Makes our transition happen instantly when we hover over.  The default
+is set to 2s above so it fades gradually when the mouse is not hovering over
+the element.*/
 
 .square:hover {
     transition-duration: 0s;
