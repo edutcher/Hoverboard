@@ -8,11 +8,11 @@
 const container = document.getElementById('container');
 // 2. This is the array that lets us decide on the possible colors for
 // our squares to turn into.  We don't need to change this so a constant
-// works well for us
+// works well for us.
 const colors = ['#e74c3c', '#8e44ad', '#3498db', '#e67e22', '#2ecc71'];
 // 3. This will set the number of squares we put in our container.  Once
 // again we don't need to change this, it gives us an easy way to if we
-// want to change the code in the future
+// want to change the code in the future.
 const numSquares = 500;
 
 // Generate a random number from 0 to the length of the colors array, 
@@ -30,8 +30,8 @@ function setColor(element) {
 
     // Element is the parameter that was sent to our function, in this
     // case we know it is a square we have created.
-    // Here we change the background color, .style. is used to change CSS
-    // properties of HTML elements in javascript.
+    // Here we change the background color, .style is the DOM way to
+    // change CSS properties of HTML elements in javascript.
     element.style.background = color;
     element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`
 }
