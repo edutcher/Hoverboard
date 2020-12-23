@@ -1,14 +1,16 @@
 // Create three constants.  Constants are close to variables; the main
 // difference is that constants can not be changed after being declared.
 // that works perfectly for us here:
-// 1. The container constant allows us to create a 'shorthand' to access
-// the main container div on our HTML page.  This mostly saves us time.
+// 1. document.getElementById() is a DOM method that allows us to refer to
+// an HTML element inside javascript by using the ID we gave it in the 
+// HTML.  The container constant allows us to create a 'shorthand' to access
+// the main container div on our HTML page.
 const container = document.getElementById('container');
 // 2. This is the array that lets us decide on the possible colors for
 // our squares to turn into.  We don't need to change this so a constant
 // works well for us
 const colors = ['#e74c3c', '#8e44ad', '#3498db', '#e67e22', '#2ecc71'];
-// 3. this will set the number of squares we put in our container.  Once
+// 3. This will set the number of squares we put in our container.  Once
 // again we don't need to change this, it gives us an easy way to if we
 // want to change the code in the future
 const numSquares = 500;
@@ -22,20 +24,20 @@ function getColor() {
 // This function will change the background color of a square to a random
 // color chosen by the getColor() function, it also adds a shadow.
 function setColor(element) {
-    // call the getColor function and assign the value returned to a
+    // Call the getColor function and assign the value returned to a
     // constant named color.
     const color = getColor();
 
     // Element is the parameter that was sent to our function, in this
     // case we know it is a square we have created.
     // Here we change the background color, .style. is used to change CSS
-    // properties of HTML elements in javascript
+    // properties of HTML elements in javascript.
     element.style.background = color;
     element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`
 }
 
 // This function will change a square back to it's default color and
-// remove the shadow
+// remove the shadow.
 function removeColor(element) {
     element.style.background = '#1d1d1d'
     element.style.boxShadow = '0 0 2px #000'
@@ -45,9 +47,11 @@ function removeColor(element) {
 // bottom of the page.
 // This for loop will run until numSquares times.
 for (var i = 0; i < numSquares; i++) {
-    // This will create a new HTML div element on our document.
+    // document.createElement is a DOM method that creates new elements
+    // on our page.  We are creating a new div element and assigning a
+    // constant reference to it named square.
     const square = document.createElement('div');
-    // Here we add the square CSS class to our created div.  This will
+    // Here we add the square CSS class to our newly created div.  This will
     // apply the CSS styling we have set for our square class to the new
     // div we created.
     square.classList.add('square');
@@ -64,7 +68,8 @@ for (var i = 0; i < numSquares; i++) {
     // sqaure as an arguement) when the mouse leaves the HTML elemment.  
     square.addEventListener('mouseout', () => removeColor(square));
 
-    // Add the square div we created inside our container.
+    // Add the square div element we created inside our container on the
+    // HTML page.
     container.appendChild(square);
 }
 // Go back and add the rest of the squares till done.
